@@ -1,8 +1,17 @@
 ﻿
+/*
+* Name: Howard Cummings
+* Course: CSCI 1250, Section 001
+* Assignment: Lab 03, The Badge Office
+* Date: September 30, 2026
+* Description: Builds a student badge from a name, two random assignments,
+* and the walking distance to a first class.
+*/
 
 
 
-//Part 1 hh
+
+//Part 1 
 
 
 using System.Numerics;
@@ -19,9 +28,11 @@ string lastName = originalName.Substring(spacePosition + 1);
 string userNameP1 = originalName.Substring(0,1);
 string lastNameInitial = lastName.Substring(0,1);
 
+string userNameFinal = (userNameP1 + lastName).ToLower();
 
 
-Console.WriteLine($"Username:  {userNameP1}{lastName}");
+
+Console.WriteLine($"Username:  {userNameFinal}");
 
 Console.WriteLine($"Initals: {userNameP1}.{lastNameInitial}");
 
@@ -79,3 +90,18 @@ int seconds = (int)tripInSeconds%60;
 Console.WriteLine($"Walk Time: {minutes} minutes {seconds} seconds");
 
 //Part 4 The Badge
+
+int checkDigit = id%9;
+
+Console.WriteLine("==================================");
+Console.WriteLine();
+Console.WriteLine("        ETSU STUDENT BADGE        ");
+Console.WriteLine();
+Console.WriteLine("==================================");
+Console.WriteLine();
+Console.WriteLine($"Name {originalName}");
+Console.WriteLine($"Username {userNameFinal}");
+Console.WriteLine($"ID {id}-{checkDigit}");
+Console.WriteLine($"Locker {locker}");
+Console.WriteLine($"Walk {minutes} min {seconds} sec");
+Console.WriteLine("==================================");
